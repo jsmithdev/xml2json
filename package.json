@@ -1,5 +1,5 @@
 {
-    "name": "xml2json-light__es6",
+    "name": "xml2json-light-es6module",
     "version": "2.0.4",
     "description": "A (temp?) ES6 module fork of xml2json-light... This function acts as an XML to JSON converter.",
     "main": "xml2json.js",

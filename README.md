@@ -2,6 +2,12 @@
 
 ## *****A (temp?) ES6 module fork of xml2json-light***
 
+To install fork:
+
+```bash
+npm i -S xml2json-light-es6module
+```
+---
 
 This function acts as an XML to JSON converter. The function is extremely small and is in pure JavaScript, therefore it has no dependencies. 
 The converter takes XML attributes into consideration. 
