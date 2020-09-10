@@ -1,7 +1,13 @@
 # xml2json
+
+## *****A (temp?) ES6 module fork of xml2json-light***
+
+
 This function acts as an XML to JSON converter. The function is extremely small and is in pure JavaScript, therefore it has no dependencies. 
 The converter takes XML attributes into consideration. 
+
 ## Installation
+
 ```
 Download and use the function directly in your code!
 

@@ -1,13 +1,9 @@
 'use strict';
 
-module.exports = {
-    xml2json: xml2json
-};
-
 //***********************************************************************
 // Main function. Clears the given xml and then starts the recursion
 //***********************************************************************
-function xml2json(xmlStr){ 
+export function xml2json(xmlStr){ 
     xmlStr = cleanXML(xmlStr);
     return xml2jsonRecurse(xmlStr,0); 
 }
@@ -15,7 +11,7 @@ function xml2json(xmlStr){
 //***********************************************************************
 // Recursive function that creates a JSON object with a given XML string.
 //***********************************************************************
-function xml2jsonRecurse(xmlStr) {
+export  function xml2jsonRecurse(xmlStr) {
     var obj = {},
         tagName, indexClosingTag, inner_substring, tempVal, openingTag;
 
@@ -60,7 +56,7 @@ function xml2jsonRecurse(xmlStr) {
 //*****************************************************************
 // Removes some characters that would break the recursive function.
 //*****************************************************************
-function cleanXML(xmlStr) {
+export  function cleanXML(xmlStr) {
     
     xmlStr = xmlStr.replace( /<!--[\s\S]*?-->/g, '' ); //remove commented lines
     xmlStr = xmlStr.replace(/\n|\t|\r/g, ''); //replace special characters
@@ -82,7 +78,7 @@ function cleanXML(xmlStr) {
 // Example : '<tagName attrName="attrValue" />' becomes 
 //           '<tagName><attrName>attrValue</attrName></tagName>'
 //************************************************************************************************************
-function replaceSelfClosingTags(xmlStr) {
+export  function replaceSelfClosingTags(xmlStr) {
 
     var selfClosingTags = xmlStr.match(/<[^/][^>]*\/>/g);
 
@@ -124,7 +120,7 @@ function replaceSelfClosingTags(xmlStr) {
 // Example : '<tagName attrName="attrValue">tagValue</tagName>' becomes 
 //           '<tagName><attrName>attrValue</attrName><_@attribute>tagValue</_@attribute></tagName>'
 //*************************************************************************************************
-function replaceAloneValues(xmlStr) {
+export  function replaceAloneValues(xmlStr) {
  
     var tagsWithAttributesAndValue = xmlStr.match(/<[^\/][^>][^<]+\s+.[^<]+[=][^<]+>{1}([^<]+)/g);
     
@@ -150,7 +146,7 @@ function replaceAloneValues(xmlStr) {
 //
 // Example : '<tagName attrName="attrValue"></tagName>' becomes '<tagName><attrName>attrValue</attrName></tagName>'
 //*****************************************************************************************************************
-function replaceAttributes(xmlStr) {
+export  function replaceAttributes(xmlStr) {
 
     var tagsWithAttributes = xmlStr.match(/<[^\/][^>][^<]+\s+.[^<]+[=][^<]+>/g);
 
